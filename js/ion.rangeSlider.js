@@ -699,6 +699,8 @@
                 this.$cache.line.on("keydown.irs_" + this.plugin_count, this.key.bind(this, "keyboard"));
             }
 
+            this.$cache.body.on("mouseup.irs_" + this.plugin_count, this.pointerUp.bind(this));
+
             if (is_old_ie) {
                 this.$cache.body.on("mouseup.irs_" + this.plugin_count, this.pointerUp.bind(this));
                 this.$cache.body.on("mouseleave.irs_" + this.plugin_count, this.pointerUp.bind(this));
@@ -754,7 +756,7 @@
             if ($.contains(this.$cache.cont[0], e.target) || this.dragging) {
                 this.callOnFinish();
             }
-            
+
             this.dragging = false;
         },
 
